@@ -1,0 +1,36 @@
+server:
+  port: 30000
+app:
+  open:
+    msg: This is the Saartha Trigger Rules Engine
+zeromq:
+  port: 5563
+  host: tcp://edgex-core-data
+
+#MQTT Sender Configuration
+mqtt:
+  broker-url: mosquitto
+  password: guest
+  broker-port: 1883
+  topic: coreData
+  user: guest 
+  keep-alive: 3600
+  qos: 2
+
+coredataAddressPort: http://edgex-core-data:48080
+commandAddressPort: http://edgex-core-command:48082
+
+#-----------------------Logging types-------------------------------
+logging:
+  remote:
+    enable: true
+    url: http://edgex-support-logging:48061/api/v1/logs
+  level.org.springframework: ERROR
+  level.org.apache: ERROR
+  level.org.edgexfoundry: INFO
+  file: /saarthaiot/logs/trigger-rulesengine.log
+spring:
+  cloud:
+    consul:
+      discovery:
+        health-check-path: /api/v1/ping
