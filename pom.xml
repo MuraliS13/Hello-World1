@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.5.RELEASE</version>
+	</parent>
+	<groupId>com.saartha.iot</groupId>
+	<artifactId>trigger-rule-engine</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>trigger-rule-engine</name>
+	<description>Trigger Rules Engine</description>
+
+	<properties>
+
+		<java.version>1.8</java.version>
+		<zeromq.version>0.5.1</zeromq.version>
+		<core-domain.version>0.5.0</core-domain.version>
+		<support-logging-client.version>0.5.0</support-logging-client.version>
+		<spring-cloud.version>Greenwich.SR2</spring-cloud.version>
+		<common-link.version>0.0.1-SNAPSHOT</common-link.version>
+		<paho.version>1.2.1</paho.version>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.saartha.iot</groupId>
+			<artifactId>common-code-link</artifactId>
+			<version>${common-link.version}</version>
+		</dependency>
+
+	<!-- 	<dependency>
+			<groupId>com.saartha.iot</groupId>
+			<artifactId>fun-5254006E0D6E1EE9ACD56AD904C619EA</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency> -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.zeromq</groupId>
+			<artifactId>jeromq</artifactId>
+			<version>${zeromq.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.edgexfoundry</groupId>
+			<artifactId>core-domain</artifactId>
+			<version>${core-domain.version}</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.paho</groupId>
+			<artifactId>org.eclipse.paho.client.mqttv3</artifactId>
+			<version>${paho.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.edgexfoundry</groupId>
+			<artifactId>support-logging-client</artifactId>
+			<version>${support-logging-client.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-consul-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-consul-discovery</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>com.saartha.iot.rulesengine.RulesEngineApplication</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+		<finalName>saartha-trigger-rulesengine</finalName>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>development</id>
+			<name>Saartha archiva repository</name>
+			<url>https://codeserver.saartha.net:8443/repository/iiot-dev-group/</url>
+		</repository>
+	</repositories>
+
+</project>
