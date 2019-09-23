@@ -2,7 +2,7 @@ FROM maven:3.3-jdk-8-alpine
 
 ARG MVN_COMMAND="mvn dependency:copy -q"
 
-COPY /pom.xml .
+COPY pom.xml .
 
 RUN $MVN_COMMAND
 
