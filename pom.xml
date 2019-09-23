@@ -6,7 +6,7 @@
 
 	<groupId>com.saartha.iot</groupId>
 	<artifactId>trigger-rule-engine</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>trigger-rule-engine</name>
 	<description>Trigger Rules Engine</description>
 
@@ -21,7 +21,7 @@
 						<artifactItem>
 						<groupId>com.saartha.iot</groupId>
 	                                        <artifactId>trigger-rule-engine</artifactId>
-	                                        <version>1.0.0-SNAPSHOT</version>
+	                                        <version>0.0.1-SNAPSHOT</version>
 					        <outputDirectory>.</outputDirectory>
 						<destFileName>saartha-trigger-rulesengine.jar</destFileName>
 						</artifactItem>
